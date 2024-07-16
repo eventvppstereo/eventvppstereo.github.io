@@ -1,151 +1,818 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TW Coming Soon | Free Tailwindcss theme by Fyrestrap</title>
+<html>
+	<head>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap" rel="stylesheet">
+	<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+	
+	
+	<style type="text/css">
+		body {
+			font-family: 'Noto Sans', sans-serif;
+			color: #4a4a4a;
+			font-size: 1em;
+			font-weight: 400;
+			line-height: 1.5;
+			margin-left: auto;
+			margin-right: auto;
+			width: 1100px;
+		}
+	
+		.title {
+			color: #363636;
+			font-size: 4rem;
+			line-height: 1.125;
+			font-weight: 200;
+			font-family: 'Google Sans', sans-serif;
+		}
+	
+		.publication-title {
+			font-family: 'Google Sans', sans-serif;
+		}
+	
+		h1 {
+			font-size: 40px;
+			font-weight: 500;
+		}
+	
+		h2 {
+			font-size: 35px;
+			font-weight: 300;
+		}
+	
+		h3 {
+			font-size: 1px;
+			font-weight: 300;
+		}
+	
+		.subtitle,
+		.title {
+			word-break: break-word;
+		}
+	
+		.title.is-2 {
+			font-size: 4rem;
+			font-weight: 400;
+		}
+	
+		.title.is-3 {
+			font-size: 2.5rem;
+			font-weight: 400;
+		}
+	
+		.content h2 {
+			font-weight: 600;
+			font-family: 'Noto Sans', sans-serif;
+			line-height: 1.125;
+		}
+	
+		.disclaimerbox {
+			background-color: #eee;
+			border: 1px solid #eeeeee;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			padding: 20px;
+		}
+	
+		video.header-vid {
+			height: 140px;
+			border: 1px solid rgba(0, 0, 0, 0.212);
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
+	
+		img.header-img {
+			height: 140px;
+			border: 1px solid black;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
+	
+		img.rounded {
+			border: 1px solid #eeeeee;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
+	
+		a:link,
+		a:visited {
+			color: #2994c5;
+			text-decoration: none;
+		}
+	
+		a:hover {
+			color: #0e889e;
+		}
+	
+		td.dl-link {
+			height: 160px;
+			text-align: center;
+			font-size: 22px;
+		}
+	
+		.layered-paper-big {
+			/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+			box-shadow:
+				0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The top layer shadow */
+				5px 5px 0 0px #fff,
+				/* The second layer */
+				5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The second layer shadow */
+				10px 10px 0 0px #fff,
+				/* The third layer */
+				10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The third layer shadow */
+				15px 15px 0 0px #fff,
+				/* The fourth layer */
+				15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The fourth layer shadow */
+				20px 20px 0 0px #fff,
+				/* The fifth layer */
+				20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The fifth layer shadow */
+				25px 25px 0 0px #fff,
+				/* The fifth layer */
+				25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+			/* The fifth layer shadow */
+			margin-left: 10px;
+			margin-right: 45px;
+		}
+	
+		.paper-big {
+			/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+			box-shadow:
+				0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+			/* The top layer shadow */
+	
+			margin-left: 10px;
+			margin-right: 45px;
+		}
+	
+		.button.is-dark {
+			background-color: #363636;
+			border-color: transparent;
+			color: #fff;
+		}
+	
+		.button.is-rounded {
+			border-radius: 290486px;
+			padding-left: calc(1em + .25em);
+			padding-right: calc(1em + .25em);
+		}
+	
+		.button.is-normal {
+			font-size: 1rem;
+		}
+	
+		.button .icon,
+		.button .icon.is-large,
+		.button .icon.is-medium,
+		.button .icon.is-small {
+			height: 1.5em;
+			width: 1.5em;
+		}
+	
+		.icon {
+			align-items: center;
+			display: inline-flex;
+			justify-content: center;
+			height: 1.5rem;
+			width: 1.5rem;
+		}
+	
+		.button.is-normal {
+			font-size: 1rem;
+		}
+	
+		.button {
+			background-color: #fff;
+			border-color: #dbdbdb;
+			border-width: 1px;
+			color: #363636;
+			cursor: pointer;
+			justify-content: center;
+			padding-bottom: calc(.5em - 1px);
+			padding-left: 1em;
+			padding-right: 1em;
+			padding-top: calc(.5em - 1px);
+			text-align: center;
+			white-space: nowrap;
+		}
+	
+		.button .icon:first-child:not(:last-child) {
+			margin-left: calc(-.5em - 1px);
+			margin-right: .25em;
+		}
+		
+		.button.is-rounded {
+			border-radius: 290486px;
+			padding-left: calc(1em + .25em);
+			padding-right: calc(1em + .25em);
+		}
+	
+		.button.is-normal {
+			font-size: 1rem;
+		}
+	
+		.button.is-dark {
+			background-color: #363636;
+			border-color: transparent;
+			color: #fff;
+		}
+	
+		.link-block a {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	
+		.button {
+			background-color: #fff;
+			border-color: #dbdbdb;
+			border-width: 1px;
+			color: #363636;
+			cursor: pointer;
+			justify-content: center;
+			padding-bottom: calc(.5em - 1px);
+			padding-left: 1em;
+			padding-right: 1em;
+			padding-top: calc(.5em - 1px);
+			text-align: center;
+			white-space: nowrap;
+		}
+	
+		.button,
+		.file-cta,
+		.file-name,
+		.input,
+		.pagination-ellipsis,
+		.pagination-link,
+		.pagination-next,
+		.pagination-previous,
+		.select select,
+		.textarea {
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			align-items: center;
+			border: 1px solid transparent;
+			border-top-color: transparent;
+			border-top-width: 1px;
+			border-right-color: transparent;
+			border-right-width: 1px;
+			border-bottom-color: transparent;
+			border-bottom-width: 1px;
+			border-left-color: transparent;
+			border-left-width: 1px;
+			border-radius: 4px;
+			box-shadow: none;
+			display: inline-flex;
+			font-size: 1rem;
+			height: 2.5em;
+			justify-content: flex-start;
+			line-height: 1.5;
+			padding-bottom: calc(.5em - 1px);
+			padding-left: calc(.75em - 1px);
+			padding-right: calc(.75em - 1px);
+			padding-top: calc(.5em - 1px);
+			position: relative;
+			vertical-align: top;
+		}
+	
+		.breadcrumb,
+		.button,
+		.delete,
+		.file,
+		.is-unselectable,
+		.modal-close,
+		.pagination-ellipsis,
+		.pagination-link,
+		.pagination-next,
+		.pagination-previous,
+		.tabs {
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+	
+		a {
+			color: #3273dc;
+			cursor: pointer;
+			text-decoration: none;
+		}
+	
+		a {
+			color: #007bff;
+			text-decoration: none;
+			background-color: transparent;
+		}
+	
+		*,
+		::after,
+		::before {
+			box-sizing: inherit;
+		}
+	
+		*,
+		::before,
+		::after {
+			box-sizing: border-box;
+		}
+	
+		span {
+			font-style: inherit;
+			font-weight: inherit;
+		}
+	
+		.layered-paper {
+			/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+			box-shadow:
+				0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The top layer shadow */
+				5px 5px 0 0px #fff,
+				/* The second layer */
+				5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The second layer shadow */
+				10px 10px 0 0px #fff,
+				/* The third layer */
+				10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+			/* The third layer shadow */
+			margin-top: 5px;
+			margin-left: 10px;
+			margin-right: 30px;
+			margin-bottom: 5px;
+		}
+	
+		.vert-cent {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	
+		hr {
+			border: 0;
+			height: 1px;
+			background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+		}
+	</style>
+	
+	<title>LiDAR-Event Stereo Fusion with Hallucinations</title>
+	<meta property="og:image" content="./assets/teaser_vpp_v2.png" />
+	<!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title" content="LiDAR-Event Stereo Fusion with Hallucinations" />
+	<meta property="og:url" content="https://eventvppstereo.github.io/">
+	<!-- Get from Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src=""></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		gtag('config', 'UA-75863369-6');
+	</script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript"
+  		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	<!-- <script type="text/javascript" id="MathJax-script" async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	</script> -->
 
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            'Montserrat': ['Montserrat'],
-            'Noto-Sans': ['"Noto Sans"'],
-            'Comforter-Brush': ['"Comforter Brush"']
-          }
-        }
-      }
-    }
-  </script>
-  
 </head>
 
-<body class="font-Noto-Sans">
+<body>
+	<br>
+	<center>
+		<h1 class="title is-1 publication-title" style="margin-bottom: 0"><strong>LiDAR-Event Stereo Fusion with Hallucinations</strong></h1>
+		<br>
+		<h3 class="title is-3 publication-title" style="margin-top: 0; margin-bottom: 0">ECCV 2024</h3>
+		<br>
+		<table align=center width="1100px">
+			<table align=center width="1000px">
+				<tr>
+					<td align=center width="180px">
+						<center>
+							<span style="font-size:25px"><a href="https://bartn8.github.io/">Luca
+									Bartolomei</a></span>
+						</center>
+					</td>
+					<td align=center width="150px">
+						<center>
+							<span style="font-size:25px"><a href="https://mattpoggi.github.io/">Matteo
+									Poggi</a></span>
+						</center>
+					</td>
+					<td align=center width="150px">
+						<center>
+							<span style="font-size:25px"><a href="https://andreaconti.github.io/">Andrea
+									Conti</a></span>
+						</center>
+					</td>
+					<td align=center width="180px">
+						<center>
+							<span style="font-size:25px"><a
+									href="http://vision.deis.unibo.it/~smatt/Site/Home.html">Stefano
+									Mattoccia</a></span>
+						</center>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table align=center width="750px">
+				<table align=center width="750px">
+					<tr>
+						<td align=center width="200px">
+							<center>
+								<span style="font-size:22px">University of Bologna</span>
+							</center>
+						</td>
+					</tr>
+				</table>
 
-  
-  <!-- Header -->
-  <header class="w-full bg-[url('assets/img/leaves.jpg')] bg-cover bg-bottom">  
-    <div class="w-full min-h-screen md:w-1/2 bg-gradient-to-b from-gray-900/90 to-gray-900/95 p-10 flex">
-      <div class="w-full text-center my-auto">
-        <h1 class="font-bold text-5xl font-Comforter-Brush text-amber-500 mb-10 md:text-right">Launcher.</h1>
-        <h6 class="font-Montserrat font-bold uppercase text-4xl md:text-5xl lg:text-6xl mb-14 md:-mr-20 text-white md:text-right">Coming <span class="text-white/70 md:-mr-20">soon</span></h6>
+				<!-- PDF Link. -->
+				<span class="link-block">
+					<a href="assets/paper.pdf" class="external-link button is-normal is-rounded is-dark"
+						style="background-color:#000000;">
+						<span class="icon">
+							<svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false"
+								data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 384 512" data-fa-i2svg="">
+								<path fill="currentColor"
+									d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z">
+								</path>
+							</svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
+						</span>
+						<span>Paper</span>
+					</a>
+				</span>
 
-        
-        <!-- Count down -->
-        <div class="w-full text-left flex mb-10">
-          <ul class="w-full flex place-content-center md:place-content-end gap-5 mx-auto text-gray-50">        
-            <li>
-              <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" id="cdD">00</div>
-              <p class="text-center text-xs mt-2">Days</p>
-            </li>
 
-            <li>
-              <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" id="cdH">00</div>
-              <p class="text-center text-xs mt-2">Hours</p>
-            </li>
+				<span class="link-block">
+					<a href="assets/paper-supp.pdf" class="external-link button is-normal is-rounded is-dark"
+						style="background-color:#000000;">
+						<span class="icon" disabled>
+							<svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false"
+								data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 384 512" data-fa-i2svg="">
+								<path fill="currentColor"
+									d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z">
+								</path>
+							</svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
+						</span>
+						<span>Supplement</span>
+					</a>
+				</span>
 
-            <li>
-              <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" id="cdM">00</div>
-              <p class="text-center text-xs mt-2">Minutes</p>
-            </li>
+				<!-- Poster Link. -->
+				<span class="link-block">
+					<a href="assets/poster.pdf" class="external-link button is-normal is-rounded is-dark"
+						style="background-color:#000000;">
+						<span class="icon">
+							<svg class="svg-inline--fa fa-palette fa-w-16" aria-hidden="true" focusable="false"
+								data-prefix="fas" data-icon="palette" role="img" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 512 512" data-fa-i2svg="">
+								<path fill="currentColor"
+									d="M204.3 5C104.9 24.4 24.8 104.3 5.2 203.4c-37 187 131.7 326.4 258.8 306.7 41.2-6.4 61.4-54.6 42.5-91.7-23.1-45.4 9.9-98.4 60.9-98.4h79.7c35.8 0 64.8-29.6 64.9-65.3C511.5 97.1 368.1-26.9 204.3 5zM96 320c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm32-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128-64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z">
+								</path>
+							</svg><!-- <i class="fas fa-palette"></i> Font Awesome fontawesome.com -->
+						</span>
+						<span>Poster</span>
+					</a>
+				</span>
+				<!-- Code Link. -->
+				<span class="link-block">
+					<a href="https://github.com/bartn8/eventvppstereo/" class="external-link button is-normal is-rounded is-dark"
+						style="background-color:#000000;">
+						<span class="icon">
+							<svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false"
+								data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 496 512" data-fa-i2svg="">
+								<path fill="currentColor"
+									d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+								</path>
+							</svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+						</span>
+						<span>Code</span>
+					</a>
+				</span>
+			</table>
+	</center>
+	<br>
+	<center>
+		<table align=center width="1000px">
+			<tr>
+				<td>
+					<center>
+						<img class="round" width="1000px" src="./assets/teaser.jpg" />
+					</center>
+				</td>
+			</tr>
+		</table>
+		<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+			<tr>
+				<td>
+					<p style="text-align: justify;">
+						<strong>LiDAR-Event Stereo Fusion with Hallucinations.</strong> In the absence of motion or brightness changes, sparse event streams lead stereo models to catastrophic failures (a). A LiDAR sensor can be used with <a href="https://github.com/mattpoggi/guided-stereo">exsisting strategies</a> to soften this problem, yet with limited impact (b), whereas our proposals are superior (c,d).
+				</td>
+			</tr>
+		</table>
+	</center>
 
-            <li>
-              <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" id="cdS">00</div>
-              <p class="text-center text-xs mt-2">Seconds</p>
-            </li>
+	<br>
+	<br>
+	<hr>
 
-          </ul>
-        </div>
+	<center>
+		<h1>Abstract</h1>
+	</center>
 
-        <!-- Content -->
-        <p class="text-base mb-10 text-gray-200 md:text-right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta reprehenderit delectus quasi eligendi maiores consectetur repellat necessitatibus libero deleniti quaerat debitis, odit earum modi. Magni porro iste dolores. </p>
+	<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+		<tr>
+			<td>
+				<p style="text-align: justify;">
+					<i>"Event stereo matching is an emerging technique to estimate depth from neuromorphic cameras; however, events are unlikely to trigger in the absence of motion or the presence of large, untextured regions, making the correspondence problem extremely challenging. Purposely, we propose integrating a stereo event camera with a fixed-frequency active sensor -- e.g., a LiDAR -- collecting sparse depth measurements, overcoming the aforementioned limitations. Such depth hints are used by hallucinating -- i.e., inserting fictitious events -- the stacks or raw input streams, compensating for the lack of information in the absence of brightness changes. Our techniques are general, can be adapted to any structured representation to stack events and outperform state-of-the-art fusion methods applied to event-based stereo."</i>
+				</p>
+			</td>
+		</tr>
+	</table>
+	<br>
 
-        <!-- Social media -->
-        <div class="w-full text-left flex">
-          <ul class="w-full flex place-content-center md:place-content-end gap-10 mx-auto text-gray-500">        
-            <li>
-              <a href="#" class="text-lg hover:text-amber-500">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
+	<hr>
 
-            <li>
-              <a href="#" class="text-lg hover:text-amber-500">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
+	<center>
+		<h1>Method</h1>
+	</center>
 
-            <li>
-              <a href="#" class="text-lg hover:text-amber-500">
-                <i class="fab fa-youtube"></i>
-              </a>
-            </li>
+	<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+		<tr>
+			<td>
+				<h2> 1 - Problems</h2>
+				<ol>
+					<li>
+						<p style="text-align: justify;">Given a pair of stereo event streams, deep event stereo networks try to estimate a dense disparity map from the stacked event streams.
+							However, the latter are uninformative when facing large uniform areas or in the absence of motion: consequentially, event stereo networks struggle to match events across left and right cameras.
+							<!-- Furthermore, given learning nature of stereo networks, they suffer when dealing with unseen scenarios.
+							This latter problem is also called domain shift. --></p>
+					</li>
+					<li>
+						<p style="text-align: justify;">
+							Several techniques (e.g., <a href="https://github.com/XuelianCheng/LidarStereoNet">LidarStereoNet</a>, <a href="https://github.com/mattpoggi/guided-stereo">Guided Stereo Matching</a>, <a href="https://github.com/bartn8/vppstereo">VPP</a>) uses a synchronous depth sensor, such as a LiDAR, to alleviate this problem in the RGB literature, however, a simple porting of those techniques is not trivial since the fixed-frequency rate of LiDARs is in contrast with the asynchronous acquistion rate of event cameras.
+							This would case to either i) use depth points only when available, harming the accuracy of most fusion strategies known from the classical stereo literature, or ii) limiting processing to the LiDAR pace, nullifying one of the greatest strength of event cameras -- i.e., microseconds resolution. 
+							Nonetheless, this track on event stereo/active sensors fusion has remained unexplored so far.
+						</p>
+						<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+							<tr>
+								<td><img src="assets/events_vs_lidar.jpg" width="990px" /></td>
+							</tr>
+						</table>
+						<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+							<tr>
+								<td>
+									<p style="text-align: justify;">
+										<strong>Event cameras vs LiDARs -- strengths and weaknesses.</strong> Event cameras	provide rich cues at object boundaries where LiDARs cannot (cyan), yet LiDARs can measure depth where the lack of texture makes event cameras uninformative (green).
+									</p>
+								</td>
+							</tr>
+						</table>
+					</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h2> 2 - Proposal</h2>
+				<ol>
+					<li>
+						<p style="text-align: justify;">
+							Inspired by our previous proposal <a href="https://github.com/bartn8/vppstereo">VPP</a>, we design a hallucination mechanism to generate fictitious events over time to densify the stream collected by the event cameras.
+							Purposely, we propose two different event-depth fusion strategies:
+							<ol type="i">
+								<li>creating distinctive patterns directly at the stack level, i.e. a Virtual Stack Hallucination (<strong>VSH</strong>), just before the deep network processing;</li>
+								<li>generating raw events directly in the stream, starting from the time instant td for which we aim to estimate a disparity map and performing Back-in-Time Hallucination (<strong>BTH</strong>).</li>
+							</ol>
+						</p>
+						<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+							<tr>
+								<td><img src="assets/proposals.jpg" width="990px" /></td>
+							</tr>
+						</table>
+						<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+							<tr>
+								<td>
+									<p style="text-align: justify;">
+										<strong>Overview of a generic event-based stereo network and our hallucination strategies.</strong> State-of-the-art event-stereo frameworks (a) pre-process raw events to obtain event stacks fed to a deep network. In case the stacks are accessible, we define the model as a gray box, otherwise as a black box. In the former case (b), we can hallucinate patterns directly on it (VSH). When dealing with a black box (c), we can hallucinate raw events that will be processed to obtain the stacks (BTH).
+									</p>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li>
+						<p style="text-align: justify;">
+							Furthermore, despite depth sensors having a fixed acquisition rate thatis in contrast with the asynchronous capture rate of event cameras, VSH and BTH can leverage depth measurements not synchronized with $t_d$ (thus collectedat $t_z < t_d$) with marginal drops in accuracy compared to the case of perfectly synchronized depth and event sensors ($t_z = t_d$). 
+							This strategy allows for exploiting both VSH and BTH while preserving the microsecond resolution peculiar of event cameras.
+						</p>
+					</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h2> 3 - Hallucinations</h2>
 
-            <li>
-              <a href="#" class="text-lg hover:text-amber-500">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </li>
+				<p style="text-align: justify;">
+					According to the sensor fusion literature for conventional cameras, the main strategies for combining stereo images with sparse depth measurements from active sensors consist of i) concatenating the two modalities and processing them as joint inputs with a stereo network, ii) modulating the internal cost volume computed by the backbone itself or, more recently, iii) projecting distinctive patterns on images according to depth hints.
+					We follow the latter path, since it is more effective and flexible than the alternatives -- which can indeed be applied to white box frameworks only. 
+					For this purpose, we design two alternative strategies suited even for gray and black box frameworks.
+				</p>
 
-          </ul>
-        </div>
+				<ul>
+					<li>
+						<p style="text-align: justify;">
+							<strong><u>V</u>irtual <u>S</u>tack <u>H</u>allucination -- VSH</strong>: Given left and right stacks $\mathcal{S}_L,\mathcal{S}_R$ of size W$\times$H$\times$C and a set $Z$ of depth measurements $z(x,y)$ by a sensor, we perform a Virtual Stack Hallucination (VSH), by augmenting each channel $c\in\text{C}$, to increase the distinctiveness of local patterns and thus ease matching. This is carried out by injecting the same virtual stack $\mathcal{A}(x,y,x',c)$ into $\mathcal{S}_L,\mathcal{S}_R$ respectively at coordinates $(x,y)$ and $(x',y)$.
+							
+							$$\mathcal{S}_L(x,y,c) \leftarrow \mathcal{A}(x,y,x',c)$$
+							$$\mathcal{S}_R(x',y,c) \leftarrow \mathcal{A}(x,y,x',c)$$
 
-      </div>
-    </div>   
-  </header>  
+							with $x'$ obtained as $x-d(x,y)$, with disparity $d(x,y)$ triangulated back from depth $z(x,y)$ as $\frac{bf}{z(x,y)}$, according to the baseline and focal lengths $b,f$ of the stereo system.
+							We deploy a generalized version of the random pattern operator $\mathcal{A}$ proposed in <a href="https://github.com/bartn8/vppstereo">VPP</a>, agnostic to the stacked representation:
 
-  <script>
-    // Change the value of countDownEndDate to the day you want to end the count down
-    var countDownEndDate = "September 29, 2024 10:00:00";
-    
-    var endDate = new Date(countDownEndDate).getTime();
-    
-    var x = setInterval(function() {
-    
-      var timeNow = new Date().getTime();
-    
-      var timeLeft = endDate - timeNow;
-    
-      var days    = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      var hours   = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+							$$\mathcal{A}(x,y,x',c) \sim \mathcal{U}(\mathcal{S}^-, \mathcal{S}^+)$$
 
-      if(days < 10) {
-        days = "0" + days;
-      }
+							with $\mathcal{S}^-$ and $\mathcal{S}^+$ the minimum and maximum values appearing across stacks $\mathcal{S}_L,\mathcal{S}_R$ and $\mathcal{U}$ a uniform random distribution. 
+							Following <a href="https://github.com/bartn8/vppstereo">VPP</a>, the pattern can either cover a single pixel or a local window.
+							This strategy alone is sufficient already to ensure distinctiveness and to dramatically ease matching across stacks, even more than with color images, since acting on semi-dense structures -- i.e.,, stacks are uninformative in the absence of events. It also ensures a straightforward application of the same principles used on RGB images, e.g.,, to combine the original content (color) with the virtual projection (pattern) employing alpha blending.
+							Nevertheless, we argue that acting at this level i) requires direct access to the stacks, i.e., a gray-box deep event-stereo network, and ii) might be sub-optimal as stacks encode only part of the information from streams.
+						</p>
+					</li>
+					<li>
+						<p style="text-align: justify;">
+							<strong><u>B</u>ack-in-<u>T</u>ime <u>H</u>allucination -- BTH</strong>: A higher distinctiveness to ease correspondence can be induced by hallucinating patterns directly in the continuous events domain.
+							Specifically, we act in the so-called <i>event history</i>: given a timestamp $t_d$ at which we want to estimate disparity, raw events are sampled from the left and right streams starting from $t_d$ and going backward, according to either SBN or SBT stacking approaches, to obtain a pair of event histories $\mathcal{E}_L = \left\{ e^L_k \right\}^{N}_{k=1}$ and $\mathcal{E}_R = \left\{ e^R_k \right\}^{M}_{k=1}$, where $e^L_k,e^R_k$ are the $k$-th left and right events.
+							Events in the history are sorted according to their timestamp -- i.e.,, inequality $t_k \leq t_{k+1}$ holds for every two adjacent $e_{k},e_{k+1}$.
+							
+							At this point, we intervene to hallucinate novel events: given a depth measurement $z(\hat{x},\hat{y})$, triangulated back into disparity $d(\hat{x},\hat{y})$, we inject a pair of fictitious events $\hat{e}^L=(\hat{x},\hat{y},\hat{p},\hat{t})$ and $\hat{e}^R=(\hat{x}',\hat{y},\hat{p},\hat{t})$ respectively inside $\mathcal{E}_L$ and $\mathcal{E}_R$, producing $\hat{\mathcal{E}}_L=\left\{e^L_1,\dots,\hat{e}^L,\dots,e^L_N\right\}$ and $\hat{\mathcal{E}}_R=\left\{e^R_1,\dots,\hat{e}^R,\dots,e^R_M\right\}$. 
+							By construction, $\hat{e}^L$ and $\hat{e}^R$ adhere to i) the time ordering constraint, ii) the geometry constraint $\hat{x}'=\hat{x}-d(\hat{x},\hat{y})$ and iii) a similarity constraint -- i.e.,, $\hat{p},\hat{t}$ are the same for $\hat{e}^L$ and $\hat{e}^R$.
+							Fictitious polarity $\hat{p}$ and fictitious timestamp $\hat{t}$ are two degrees of freedom useful to ensure distinctiveness along the epipolar line and ease matching, according to which we can implement different strategies, and detailed in the remainder.
+						</p>
+						<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+							<tr>
+								<td><img src="assets/bth.jpg" width="990px" /></td>
+							</tr>
+						</table>
+						<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+							<tr>
+								<td>
+									<p style="text-align: justify;">
+										<strong>Overview of Back-in-Time Hallucination (BTH).</strong> To estimate disparity at $t_d$, if LiDAR data is available -- e.g., at timestamp $t_z=t_d$ (green) or $t_z=t_d-15$ (yellow) -- we can naively inject events of random polarities at the same timestamp $t_z$ (a). 
+										More advanced injection strategies can be used -- e.g., by hallucinating multiple events, starting from $t_d$, back-in-time at regular intervals (b).
+									</p>
+								</td>
+							</tr>
+						</table>
+						<p style="text-align: justify;">
+							<strong>Single-timestamp injection:</strong> The simplest way to increase distinctiveness is to insert synchronized events at a fixed timestamp.
+							Accordingly, for each depth measurement $d(\hat{x},\hat{y})$, a total of $K_{\hat{x},\hat{y}}$ pairs of fictitious events are inserted in $\mathcal{E}_L,\mathcal{E}_R$, having polarity $\hat{p}_k$ randomly chosen from the discrete set $\left\{-1,1\right\}$. Timestamp $\hat{t}$ is fixed and can be, for instance, $t_z$ at which the sensor infers depth, that can coincide with timestamp $t_d$ at which we want to estimate disparity -- e.g.,, $t_z=t_d=0$ in the case (a). Inspired by <a href="https://github.com/bartn8/vppstereo"></a>, events might be optionally hallucinated in patches rather than single pixels.
+							However, as depth sensors usually work at a fixed acquisition frequency -- e.g.,, 10Hz for LiDARs -- sparse points might be unavailable at any specific timestamp. Nonetheless, since $\mathcal{E}_L,\mathcal{E}_R$ encode a time interval, we can hallucinate events even if derived from depth scans performed <i>in the past</i> -- e.g.,, at $t_z < t_d$, -- by placing them in the proper position inside $\mathcal{E}_L,\mathcal{E}_R$.
+						</p>
+						<p style="text-align: justify;">
+							<strong>Repeated injection:</strong> The previous strategy does not exploit one of the main advantages of events over color images, i.e., the temporal dimension, at its best. Purposely, we design a more advanced hallucination strategy based on <i>repeated</i> naive injections performed along the time interval sampled by $\mathcal{E}_L, \mathcal{E}_R$. 
+							As long as we are interested in recovering depth at $t_d$ only, we can hallucinate as many events as we want in the time interval <i>before</i> $t$ -- i.e.,, for $t_z=t_d=0$, over the entire interval as shown in (b) -- consistent with the depth measurements at $t_d$ itself, which will increase the distinctiveness in the event histories and will ease the match by hinting the correct disparity. 
+							We can design a strategy for injecting multiple events along the stream. 
+							Accordingly, we define the <i>conservative</i> time range $\left[t^-,t^+\right]$ of the events histories $\mathcal{E}_L, \mathcal{E}_R$, with $t^-=\min\left\{t^L_0,t^R_0\right\}$ and $t^+=\max\left\{t^L_N,t^R_M\right\}$ and divide it into $B$ equal temporal bins.
+							Then, inspired by <a href="https://github.com/yonseivnl/se-cff">MDES</a>, we run $B$ single-timestamp injections at $\hat{t}_b=\frac{2^b-1}{2^b}(t^+-t^-)+t^-$, with $b \in \left\{1,\dots,B\right\}$. %$\hat{t}_b=\frac{2^b-1}{2^b}\Delta t+t^-$.
+							Additionally, each depth measurement is used only once -- i.e.,, the number of fictitious events $K_{b,\hat{x},\hat{y}}$ in the $b$-th injection is set as $K_{b,\hat{x},\hat{y}} \leftarrow K_{\hat{x},\hat{y}}\delta(b,D_{\hat{x},\hat{y}})$ where $\delta(\cdot,\cdot)$ is the Kronecker delta and $D_{\hat{x},\hat{y}}\leftarrow\text{round}(X^\mathcal{U}(B-1)+1)$ is a random slot assignment.
+							We will show in our experiment how this simple strategy can improve the results of BTH, in particular increasing its robustness against misaligned LiDAR data -- i.e., measurements retrieved at a timestamp $t_z < t_d$.
+						</p>
+					</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
 
-      if(hours < 10) {
-        hours = "0" + hours;
-      }
+	<br>
+	<br>
+	<hr>
 
-      if(minutes < 10) {
-        minutes = "0" + minutes;
-      }
+	<center>
+		<h1>Experimental Results</h1>
+	</center>
 
-      if(seconds < 10) {
-        seconds = "0" + seconds;
-      }
-    
-      if (timeLeft > 0) {
-        document.getElementById("cdD").innerHTML = days;
-        document.getElementById("cdH").innerHTML = hours;
-        document.getElementById("cdM").innerHTML = minutes;
-        document.getElementById("cdS").innerHTML = seconds;
-      }
-    }, 1000);
-  </script>
+	<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+		<tr>
+			<td>
+				<h2>Performance versus Competitors</h2>
+
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td><img src="assets/qualitative1.jpg" width="990px" /></td>
+					</tr>
+				</table>
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td>
+							<p style="text-align: justify;">
+								<strong>Performance against competitors -- pre-trained models.</strong> Results on <a href="https://dsec.ifi.uzh.ch/">DSEC</a> <i>zurich_10_b</i> with <a href="https://arxiv.org/abs/1812.08156">Voxelgrid</a> (top) and <a href="https://m3ed.io/">M3ED</a> <i>spot_indoor_obstacles</i> with <a href="https://arxiv.org/abs/1804.01310">Histogram</a> (bottom).
+							</p>
+						</td>
+					</tr>
+				</table>
+
+				<br>
+
+				<p style="text-align: justify;">
+					We test the effectiveness of BTH and alternative approaches on <a href="https://dsec.ifi.uzh.ch/">DSEC</a> and <a href="https://m3ed.io/">M3ED</a>, using the backbones trained on <a href="https://dsec.ifi.uzh.ch/">DSEC</a> without any fine-tuning on <a href="https://m3ed.io/">M3ED</a> itself.
+					On <a href="https://dsec.ifi.uzh.ch/">DSEC</a> (top), BTH dramatically improves results over the baseline and Guided, yet cannot fully recover some details in the scene except when retraining the stereo backbone. On <a href="https://m3ed.io/">M3ED</a> (bottom), both VSH and BTH with pre-trained models reduce the error by 5x.
+				</p>
+
+				<br>
+
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td><img src="assets/qualitative2.jpg" width="990px" /></td>
+					</tr>
+					<tr><td><br></td></tr>
+					<tr>
+						<td><img src="assets/qualitative3.jpg" width="990px" /></td>
+					</tr>
+				</table>
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td>
+							<p style="text-align: justify;">
+								<strong>Performance against competitors -- refined models.</strong> Results on <i>car_forest_tree_tunnel</i> (<a href="https://m3ed.io/">M3ED</a>), with <a href="https://github.com/yonseivnl/se-cff">MDES</a> representation (top) and <i>spot_indoor_obstacles</i> (<a href="https://m3ed.io/">M3ED</a>) with ERGO-12 representation (bottom).
+							</p>
+						</td>
+					</tr>
+				</table>
+
+				<br>
+
+				<p style="text-align: justify;">
+					<a href="https://github.com/XuelianCheng/LidarStereoNet">Concat</a> and <a href="https://github.com/zswang666/Stereo-LiDAR-CCVNorm">Guided+Concat</a> can reduce the error by about 40%, yet far behind the improvement yielded by BTH (more than 70% error rate reduction).
+					Our proposal confirms again the best solution for exploiting raw LiDAR measurements and improve the accuracy of event-based stereo networks.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<br>
+				<h2>Robustness against time-misaligned LiDAR</h2>
+
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td><img src="assets/qualitative4.jpg" width="990px" /></td>
+					</tr>
+					<tr><td><br></td></tr>
+					<tr>
+						<td><img src="assets/qualitative5.jpg" width="990px" /></td>
+					</tr>
+				</table>
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td>
+							<p style="text-align: justify;">
+								<strong>Experiments with time-misaligned LiDAR on <a href="https://m3ed.io/">M3ED</a>.</strong> We measure the robustness of different fusion strategies against the use of out-of-sync LiDAR data, without retraining (top) and retraining (bottom) the stereo backbone.
+							</p>
+						</td>
+					</tr>
+				</table>
+
+				<br>
+
+				<p style="text-align: justify;">
+					We conclude by assessing the robustness of the considered strategies against the use of LiDAR not synchronized with the timestamp at which we wish to estimate disparity -- occurring if we wish to maintain the microsecond resolution of the event cameras.
+					Not surprisingly, the error rates arise at the increase of the temporal distance: while this is less evident with <a href="https://github.com/mattpoggi/guided-stereo">Guided</a> because of its limited impact, this becomes clear with VSH and BTH. 
+					Nonetheless, both can always retain a significant gain over the baseline model -- i.e., the stereo backbone processing events only -- even with the farthest possible misalignment with a 10Hz LiDAR (100ms).
+				</p>
+			</td>
+		</tr>
+	</table>
+
+
+	<br>
+	<hr>
+
+	<div class="container is-max-desktop content">
+		<center><h1 class="bibtex" style="font-size:32px; font-weight:400;">BibTeX</h1></center>
+		<pre style="background-color: #f5f5f5; color: #4a4a4a; font-size: 1.5em; overflow-x: auto;"><code>@inproceedings{bartolomei2024lidar,
+	title={LiDAR-Event Stereo Fusion with Hallucinations},
+	author={Bartolomei, Luca and Poggi, Matteo and Conti, Andrea and Mattoccia, Stefano},
+	booktitle={European Conference on Computer Vision (ECCV)},
+	year={2024},
+}</code></pre>
+	</div>
+
+
+	<br>
+	<br>
+	<hr>
 </body>
+
 </html>
