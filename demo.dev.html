@@ -468,7 +468,7 @@
 
 				<!-- PDF Link. -->
 				<span class="link-block">
-					<a href="https://vppstereo.github.io/extension.html" class="external-link button is-normal is-rounded is-dark"
+					<a href="https://vppdc.github.io/" class="external-link button is-normal is-rounded is-dark"
 						style="background-color:#000000;">
 						<span class="icon">
 							<svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false"
@@ -479,7 +479,7 @@
 								</path>
 							</svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
 						</span>
-						<span>Journal Paper</span>
+						<span>3DV Paper</span>
 					</a>
 				</span>
 
@@ -560,19 +560,26 @@
 		<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 			<tr>
 				<td>
-					<model-viewer src="assets/demo/CVRP-DEMO-SLIDE v2.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="assets/demo/poster.webp" shadow-intensity="1">
+					<model-viewer src="assets/demo/prototype_l515.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="assets/demo/poster_l515.webp" shadow-intensity="1" camera-orbit="-91.17deg 157.5deg 35.32m">
 						<div class="progress-bar hide" slot="progress-bar">
 							<div class="update-bar"></div>
 						</div>
 					</model-viewer>
 				</td>
+				<td>
+					<model-viewer src="assets/demo/prototype_mid70.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="assets/demo/poster_mid70.webp" shadow-intensity="1" camera-orbit="89.61deg 22.5deg 32.62m">
+						<div class="progress-bar hide" slot="progress-bar">
+							<div class="update-bar"></div>
+						</div>
+					</model-viewer>
+				</td>	
 			</tr>
 		</table>
 		<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 			<tr>
 				<td>
 					<p style="text-align: justify;">
-						<strong>Our prototype at CVPR 2024.</strong> We built a functional prototype composed of an OAK-D lite stereo camera with a built-in Stereo matching algorithm and an Intel RealSense L515 LiDAR as the sparse depth sensor. OAK-D Lite and L515 are rigidly fixed using a handmade alluminium support to guarantee a stable calibration over time.​
+						<strong>Our prototypes at ECCV 2024.</strong> We built two prototypes for indoor/outdoor scenarios composed of an OAK-D lite stereo camera with a built-in Stereo matching algorithm, an Intel RealSense L515 LiDAR as the indoor sparse depth sensor and Livox MID-70 as the indoor/outdoor sparse depth sensor. Sensors are rigidly fixed using a handmade alluminium support to guarantee a stable calibration over time.
 					</p>
 				</td>
 			</tr>
@@ -591,14 +598,13 @@
 			<td>
 				<p style="text-align: justify;">
 					<i>
-						"The demo aims to showcase a novel matching paradigm, proposed at <a href="https://arxiv.org/abs/2309.12315">ICCV 2023</a>, based on projecting virtual patterns onto conventional stereo pairs according to the sparse depth points gathered by a depth sensor to achieve robust and dense depth estimation at the resolution of the input images.
-						Such a virtual hallucination strategy can be seamlessly used with any algorithm or deep network for stereo correspondence, dramatically improving the performance of the baseline methods.
-						In contrast to active stereo systems based on a conventional pattern projector (e.g., Intel Realsense or OAK-D Pro stereo cameras), our proposal acts on the vanilla RGB images, is effective at any distance, even with sunlight, and does not require additional IR/RGB cameras nor a physical IR pattern projector.
-						Moreover, the virtual projection paradigm can be used even for other tasks, such as depth completion, as proposed at <a href="https://arxiv.org/abs/2312.09254">3DV 2024</a>.
-						We will showcase to the CVPR community how flexible and effective the virtual pattern projection paradigm is through a real-time demo based on off-the-shelf cameras and depth sensors.
-						Specifically, we will demonstrate the advantage yielded by our proposal for stereo, through a live real-time session on a Jetson Nano connected to a commercial stereo camera (i.e., OAK-D camera) and an depth sensor (i.e., Realsense LiDAR L515).
-						This setup will also allow us to explain thoroughly, with a live demonstration, the principle and the outcome of our virtual hallucination strategy on the vanilla images acquired by the camera in the task mentioned above.  
-						"
+						"The demo aims to showcase a novel matching paradigm, proposed at <a href="https://arxiv.org/abs/2309.12315">ICCV 2023</a>, based on the hallucination of vanilla input images gathered by standard imaging devices.
+						 Its working principle consists of projecting virtual patterns according to the sparse depth points gathered by a depth sensor to enable robust and dense depth estimation at the resolution of the input images.
+						 Such a virtual hallucination strategy can be seamlessly used with any algorithm or deep network for stereo correspondence, dramatically improving the performance of the baseline methods.
+						 In contrast to active stereo systems based on a conventional pattern projector (e.g., Intel RealSense or OAK-D Pro stereo cameras), our proposal acts on the vanilla RGB images, is effective at any distance, even with sunlight, and does not require additional IR/RGB cameras nor a physical IR pattern projector. 
+						 Moreover, our virtual projection paradigm is general, and can be applied to other tasks, such as depth completion, as proposed at <a href="https://arxiv.org/abs/2312.09254">3DV 2024</a>, and more recently to Event-Stereo Matching, as proposed at <a href="https://arxiv.org/abs/2408.04633">ECCV 2024</a>. 
+						 In the demo, with multiple setups, we will showcase to the ECCV community how flexible and effective the virtual pattern projection paradigm is through a real-time demo based on off-the-shelf cameras and depth sensors.
+						 Specifically, we will present our proposal with different algorithms and networks through a live real-time session on a standard notebook connected to a commercial stereo camera (e.g., OAK-D camera) and multiple depth sensors (e.g. RealSense LiDAR L515 and Livox MID-70)."
 					</i>
 				</p>
 			</td>
@@ -611,19 +617,20 @@
 
 	<!-- Details section -->
 	<center>
-		<h1>The Prototype</h1>
+		<h1>The Prototypes</h1>
 	</center>
+
 	<table align=center width="1000px">
 		<tr>
 			<td align=center width="1000px">
 				<center>
-					<img class="round" width="1000px" src="./assets/demo/Slide8.jpg" />
+					<img style="padding-top: 10px;" class="round" width="1000px" src="./assets/demo/Slide13.jpg" />
 				</center>
 				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 					<tr>
 						<td>
 							<p style="text-align: justify;">
-								<strong>Calibration of sensors.</strong> We managed to calibrate the setup using a <a href="https://docs.opencv.org/4.4.0/d9/d0c/group__calib3d.html#ga91018d80e2a93ade37539f01e6f07de5:~:text=%E2%97%86-,stereoCalibrate,-()%20%5B1/2">standard chessboard calibration algorithm</a> between the IR camera of L515 and the left camera of OAK-D Lite.​ L515 and OAK-D share the same clock of the host machine and are time synchronized using the nearest timestamp algorithm. Kudos to bachelor student Nicole Ferrari for the algorithm implementation.​
+								<strong>Calibration of L515 - OAK-D prototype.</strong> We managed to calibrate the setup using a <a href="https://docs.opencv.org/4.4.0/d9/d0c/group__calib3d.html#ga91018d80e2a93ade37539f01e6f07de5:~:text=%E2%97%86-,stereoCalibrate,-()%20%5B1/2">standard chessboard calibration algorithm</a> between the IR camera of L515 and the left camera of OAK-D Lite. L515 and OAK-D share the same clock of the host machine and are time synchronized using the nearest timestamp algorithm.
 							</p>
 						</td>
 					</tr>
@@ -633,13 +640,13 @@
 		<tr>
 			<td align=center width="1000px">
 				<center>
-					<img class="round" width="1000px" src="./assets/demo/Slide9.jpg" />
+					<img style="padding-top: 10px;" class="round" width="1000px" src="./assets/demo/Slide14.jpg" />
 				</center>
 				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 					<tr>
 						<td>
 							<p style="text-align: justify;">
-								<strong>Reprojection of sparse depth points.</strong> Firstly, the Intel Realsense L515 captures sparse depth points with high confidence.​ The resulting sparse depth map is reprojected from the L515 reference frame to the OAK-D left camera using the rigid transformation previously found using the chessboard calibration algorithm.​
+								<strong>Calibration of MID-70 - OAK-D prototype.</strong> Even if the MID-70 does not output images, we managed to calibrate the setup using a <a href="https://docs.opencv.org/4.4.0/d9/d0c/group__calib3d.html#ga91018d80e2a93ade37539f01e6f07de5:~:text=%E2%97%86-,stereoCalibrate,-()%20%5B1/2">standard chessboard calibration algorithm</a>: we simulate a pseudo-image projecting the reflectivity values of the point cloud into a virtual camera image plane. The MID70 uses PTP protocol to synchronize the local clock with the host.
 							</p>
 						</td>
 					</tr>
@@ -649,19 +656,35 @@
 		<tr>
 			<td align=center width="1000px">
 				<center>
-					<img class="round" width="1000px" src="./assets/demo/Slide17.jpg" />
+					<img style="padding-top: 10px;" class="round" width="1000px" src="./assets/demo/Slide15.jpg" />
 				</center>
 				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 					<tr>
 						<td>
 							<p style="text-align: justify;">
-								<strong>Robust and vanilla depth estimation.</strong> The vanilla pair of stereo images are fed into the OAK-D <a href="https://docs.luxonis.com/software/depthai-components/nodes/stereo_depth">StereoDepth module</a> to obtain a vanilla depth estimation. The vanilla pair is also fed into our VPP module which produces two enhanced stereo images in a fraction of a second.​ These VPP images are fed again into the OAK-D stereo algorithm to obtain a robust depth estimation. Our graphical interface permits us to show the benefits of our proposal in critical areas such as textureless regions with respect to the vanilla passive stereo.​
+								<strong>VPP demo.</strong> Sparse depth hints are reprojected into the OAK-D left camera using the rigid transformation previously found using the chessboard calibration algorithm (1,2). The vanilla pair of stereo images are fed into the OAK-D <a href="https://docs.luxonis.com/software/depthai-components/nodes/stereo_depth">StereoDepth module</a> to obtain a vanilla depth estimation (3). The vanilla pair is also fed into our VPP module which produces two enhanced stereo images in a fraction of a second (4). These VPP images are fed again into the OAK-D stereo algorithm to obtain a robust depth estimation (5). Our graphical interface permits us to show the benefits of our proposal in critical areas such as textureless regions with respect to the vanilla passive stereo.
 							</p>
 						</td>
 					</tr>
 				</table>
-			</td>
+			</td>			
 		</tr>
+		<tr>
+			<td align=center width="1000px">
+				<center>
+					<img style="padding-top: 10px;" class="round" width="1000px" src="./assets/demo/Slide16.jpg" />
+				</center>
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td>
+							<p style="text-align: justify;">
+								<strong>VPPDC demo.</strong> The L515 captures an RGB image and some depth hints aligned with the RGB image (1). The VPPDC module virtually projects the depth hints into the virtual cameras accordingly to the virtual stereo hyperparameters (2). The virtual pair is fed into the OAK-D's SGM processor to extract a dense depth map (3). To further enhance fine details in the dense depth map, we fed the virtual pair and the context image to <a href="https://github.com/princeton-vl/RAFT-Stereo">RAFT-Stereo</a> (4).
+							</p>
+						</td>
+					</tr>
+				</table>
+			</td>			
+		</tr>		
 	</table>
 
 	<br>
@@ -679,12 +702,12 @@
 						allowfullscreen></iframe>-->
 					<!--<img src="assets/slide_title.jpg" width="1000px" />-->
 					<video id="myvideo" width="1000px" controls preload="metadata">
-						<source src="assets/demo/CVPR24DEMO.mp4" type="video/mp4">
+						<source src="assets/demo/ECCV24DEMO.mp4" type="video/mp4">
 						<track
 						label="English"
 						kind="captions"
 						srclang="en"
-						src="assets/demo/CVPR24DEMO.mp4.vtt"
+						src="assets/demo/ECCV24DEMO.mp4.vtt"
 						default />
 
 						Your browser does not support the video tag.
@@ -693,442 +716,6 @@
 			</td>
 		</tr>
 	</table>
-
-	<br>
-	<br>
-	<hr>
-
-	<center>
-		<h1>Virtual Pattern Projection (VPP)</h1>
-	</center>
-	
-	<br>
-
-	<center>
-		<table align=center width="1000px">
-			<tr>
-				<td>
-					<center>
-						<img class="round" width="1000px" src="./assets/extension/teaser_vpp_v3.jpg" />
-					</center>
-				</td>
-			</tr>
-		</table>
-		<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-			<tr>
-				<td>
-					<p style="text-align: justify;">
-						<strong>Virtual Pattern Projection for deep stereo.</strong> Either in challenging outdoor (top) or indoor (bottom) environments (a), stereo networks like <a href="https://github.com/princeton-vl/RAFT-Stereo">RAFT-Stereo</a> (top) or PSMNet (bottom) struggle (b). By projecting a virtual pattern on images (c), the same networks dramatically improve their accuracy without retraining (d). Training the models to deal with the augmented images (e) further reduces errors.
-					</p>
-				</td>
-			</tr>
-		</table>
-	</center>
-
-	<br>
-
-
-	<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-		<center>
-			<tr>
-				<td>
-					<h2> 1 - Problems</h2>
-					<ol>
-						<li>
-							<p style="text-align: justify;">Given a pair of stereo images, stereo algorithms try to resolve the so called "correspondence problem".
-								This problem is not always easy: uniform areas such as the wall shown in the figure make the problem ambiguous.
-								Furthermore, given learning nature of stereo networks, they suffer when dealing with unseen scenarios.
-								This latter problem is also called domain shift.</p>
-							<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-								<tr>
-									<td><img src="assets/vanilla_midd21.png" width="495px" /></td>
-									<td><img src="assets/vanilla_midd21_cfnet.png" width="495px" /></td>
-								</tr>
-							</table>
-							<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-								<tr>
-									<td>
-										<p style="text-align: justify;">
-											<strong>Performance on uniform areas.</strong> Even <a href="https://github.com/gallenszl/CFNet">recent stereo network</a> struggles with uniform areas.
-										</p>
-									</td>
-								</tr>
-							</table>
-						</li>
-						<li>
-							<p style="text-align: justify;">
-								Active stereo deal with ambiguous regions using a physical pattern projector which aims to ease correspondences.
-								However, a pattern projector is not feasible in outdoor scenarios where ambient light cancel out the projected pattern.
-								Furthermore, active light decreases proportionally to the square of the distance: consequentially active stereo cannot deal with long distances.
-							</p>
-							<center>
-								<img src="assets/active_pattern.gif" width="1000px" />
-							</center>
-							<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-								<tr>
-									<td>
-										<p style="text-align: justify;">
-											<strong>Performance of active pattern.</strong> Even in a indoor scenario, active light decreases proportionally to the square of the distance. As soon as we move in an external environment, the projected light is dimmed by the external light.
-										</p>
-									</td>
-								</tr>
-							</table>
-						</li>
-					</ol>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<h2> 2 - Proposal</h2>
-					<ol>
-						<li>
-							<!-- <p style="text-align: justify;">We project a virtual pattern (VPP) on stereo image pair according to sparse depth measurements given by a depth sensor</p> -->
-							<p style="text-align: justify;">
-								Inspired by active stereo, our technique, dubbed as <strong>VPP</strong>, virtually project a pattern into stereo image pair according to sparse depth measurements.
-								We assume a calibrated setup composed by stereo camera and a depth sensor appropriate for the final environment.
-							</p>
-							<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-								<tr>
-									<td><img src="assets/vpp_midd21.png" width="495px" /></td>
-									<td><img src="assets/vpp_midd21_cfnet.png" width="495px" /></td>
-								</tr>
-							</table>
-							<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-								<tr>
-									<td>
-										<p style="text-align: justify;">
-											<strong>Potential of our proposal.</strong> 
-											<a href="https://github.com/gallenszl/CFNet">Previous shown network</a>, even trained on synthetic data, dramatically improves its accuracy when coupled with our framework, even with few sparse points.
-										</p>
-									</td>
-								</tr>
-							</table>
-							<br>
-							<center>
-								<img src="assets/vanilla_kitti.png" width="1000px" />
-								<img src="assets/vpp_kitti.png" width="1000px" />
-							</center>
-							<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-								<tr>
-									<td>
-										<p style="text-align: justify;">
-											<strong>Appropriate depth sensor choice.</strong> 
-											LiDAR sensor is well suited for outdoor environments.
-										</p>
-									</td>
-								</tr>
-							</table>
-						</li>
-						<!-- <li>
-							<p style="text-align: justify;">This virtual active stereo setup works in any environment if coupled with an appropriate depth sensor</p>
-						</li> -->
-						<li>
-							<!-- <p style="text-align: justify;">Even with few points (e.g., 1% of the whole image), our proposal outperforms SOTA fusion methods​</p> -->
-							<p style="text-align: justify;">
-								Our proposal outperforms state-of-the-art fusion methods even with few depth points such as 1% of the whole image.
-								Finally, as shown in the figure, virtual pattern reduce domain shift issue without requiring an additional training procedure.
-							</p>
-							<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em; text-align: center; ">
-								<tr>
-									<td><img src="assets/vanilla_midd21_cfnet.png" width="330px" /></td>
-									<td><img src="assets/vanilla_midd21_cfnet_ft.png" width="330px" /></td>
-									<td><img src="assets/vpp_midd21_cfnet.png" width="330px" /></td>
-								</tr>
-								<tr>
-									<td>(A)</td>
-									<td>(B)</td>
-									<td>(C)</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td><img src="assets/midd21_gt.png" width="330px" /></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>(D)</td>
-									<td></td>
-								</tr>
-							</table>
-							<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-								<tr>
-									<td>
-										<p style="text-align: justify;">
-											<strong>Appropriate depth sensor choice.</strong> 
-											<a href="https://github.com/gallenszl/CFNet">Previous shown network</a> trained on synthetic data struggles (A) when dealing on new environment.
-											Fine tuning the network in final scenario (B) improves accuracy but require annotated data. 
-											Using our framework in combination with <a href="https://github.com/gallenszl/CFNet">CFNet</a> shows an ability to tackle domain shift issues (C), even with low amount (5%) of  sparse points.
-											Last figure (D) shows ground-truth disparity map.
-										</p>
-									</td>
-								</tr>
-							</table>
-						</li>
-						<!-- <li>
-							<p style="text-align: justify;">When dealing with networks trained on synthetic data, it improves accuracy and shows an ability to tackle domain shift issues </p>
-						</li> -->
-					</ol>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<h2> 3 - Proposed Framework (VPP)</h2>
-					
-					<center>
-						<img class="round" width="1000px" src="./assets/extension/framework_new.jpg" />
-					</center>
-					<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-						<tr>
-							<td>
-								<p style="text-align: justify;">
-									<strong>Framework overview.</strong> 
-									Given a vanilla stereo pair of images from a stereo camera and sparse depth points from a depth sensor, our framework virtually projects depth seeds to stereo pair according to system geometry and a pattering strategy.
-								</p>
-							</td>
-						</tr>
-					</table>
-
-					<p style="text-align: justify;">
-						As for all fusion methods, our proposal relies on sparse depth seeds but, differentially from them, we inject sparse points directly into images using a virtual pattern.
-						For each known point, we convert depth into disparity then we apply a virtual pattern in each stereo image accordingly to a pattering strategy.
-					</p>
-
-					$$I_L(x,y) \leftarrow \mathcal{A}(x,x',y)$$
-					$$I_R(x',y) \leftarrow \mathcal{A}(x,x',y)$$
-
-					<p style="text-align: justify;">
-						Our method do not require any change or assumption in the stereo matcher: we assume it to be a black-box model that requires in input a pair of rectified stereo images and produce a disparity map.
-					</p>
-
-					<p style="text-align: justify;">Augmented stereo pair is less affected by ambiguous regions and makes stereo matcher work easier. Given that our framework alters only stereo pair, any stereo matcher could benefit from it. Since disparity seed could have subpixel accuracy, we use weighted splatting to avoid loss of information.</p>
-
-					$$I_R(\lfloor x'\rfloor,y) \leftarrow \beta I_R(\lfloor x'\rfloor,y) + (1-\beta) \mathcal{A}(x,x',y)$$
-					$$I_R(\lceil x'\rceil,y) \leftarrow (1-\beta) I_R(\lceil x'\rceil,y) + \beta \mathcal{A}(x,x',y)$$
-					$$\beta = x'-\lfloor x'\rfloor$$
-
-					<p style="text-align: justify;">We propose different pattering strategies to enhance distinctiveness and high correspondence, a patch-based approach to increase pattern visibility, alpha-blending with original content to deal with adversial issues with neural networks, a solution to ambiguous projection on occluded points and consequentially an heuristic to classify occluded sparse points. In particular:</p>
-					
-					<ul>
-						<li>
-							<p style="text-align: justify;">We propose two different pattering strategies: i) random pattering strategy and ii) distinctiveness pattering strategy based on histogram analysis.</p>
-							<ol type="i">
-								<li>
-									<p style="text-align: justify;">Our random strategy is faster than second proposed strategy, but do not guarantee distinctiveness: for each known pair of corresponding points a random pattern is applied in each view, sampling from an uniform distribution.</p>
-									$$\mathcal{A}(x,x',y)\sim\mathcal{U}(0,255)$$
-								</li>
-								<li>
-									<p style="text-align: justify;">Our histogram strategy performs an analysis in the neighbourood of each corresponding point to guarantee local distinctiveness.
-										For $(x,y)$ in the reference image, we consider two windows of length $L$ centered on it and on $(x',y)$ in the target image. Then, the histograms computed over the two windows are summed up and the operator $\mathcal{A}(x,x',y)$ picks the color maximizing the distance from any other color in the histogram $\text{hdist}(i)$, with $\text{hdist}(i)$ returning the minimum distance from a filled bin in the sum histogram $\mathcal{H}$</p>
-									$$\text{hdist}(i) =  \big\{\min\{ |i-i_l|,\,|i-i_r| \},i_l\in[0,i[:\mathcal{H}(i_l)>0,i_r\in]i,255]:\mathcal{H}(i_r)>0 \big\}$$
-								</li>
-							</ol>
-						</li>
-						<li>
-							<p style="text-align: justify;">Instead of projecting in two single corresponding pixels, a patch-based approach simply assume the same disparity value also for neighbour pixels.</p>
-							<center>
-								<img src="assets/patchbased.png" width="250px"/>
-							</center>
-						</li>
-                        <li>
-                            <p style="text-align: justify;">The patch can be shaped to fit the context using two strategies: distance based patch-size and RGB guided adaptive patch. The former assumes that things appear smaller in the images at farther distances: a large virtual patch might cover most of a small object when it is far from camera, preventing the stereo algorithm from inferring its possibly different disparity values. Considering a disparity hint $d(x,y)$, a disparity search range $\left[ D_\text{min}, D_\text{max} \right]$, and a maximum patch size $N_\text{max}$, we adjust the patch size $N(x,y)$ as follows:</p>
-                            $$N(x,y) = \text{round}\left( \left(\frac{d(x,y)-D_\text{min}}{D_\text{max}-D_\text{min}}\right)^{\frac{1}{\phi}} \cdot \left( N_\text{max}-1 \right)  + 1  \right)$$
-                            <p style="text-align: justify;">where $\phi$ models the mapping curve and $D_\text{min}, D_\text{max}$ are given respectively by the nearest and the farthest hint in the frame.</p>
-                            <p style="text-align: justify;">Regardless of the distance from the camera, a fixed patch shape becomes problematic near depth discontinuities and with thin objects. As detailed next, following <a href="https://vppdc.github.io/">Bartolomei et al.</a> we adapt the patch shape according to the reference image content to address this challenge. Given a local window $\mathcal{N}(x,y)$ centered around the disparity hint $d(x,y)$, for each pixel $(u,v)\in\mathcal{N}(x,y)$ we estimate the spatial $S(x,y,u,v)=(x-u)^2+(y-v)^2$ and color $C(x,y,u,v)=\left|I_L(u,v)-I_L(x,y)\right|$ agreement with the reference hint point $(x,y)$ and feed them into model $W_\text{c}(x,y,u,v)$:</p>
-                            $$W_\text{c}(x,y,u,v)=\exp\left(\frac{S(x,y,u,v)}{-2\sigma_s^2}+\frac{C(x,y,u,v)}{-2\sigma_c^2}\right)$$
-                            <p style="text-align: justify;">where $\sigma_s$ and $\sigma_c$ control the impact of the spatial and color contribution as in a bilateral filter.  For each pixel $(u,v)$ within a patch centred in $(x,y)$, we apply the virtual projection only if $W(x,y,u,v)$ exceeds a threshold $t_w$.                          Additionally, we store $W(x,y,u,v)$ values in a proper data structure to handle overlapping pixels between two or more patches -- i.e., we perform virtual projection only for the pixel with the highest score.</p>
-                        </li>
-						<li>
-							<p style="text-align: justify;">A virtual pattern might hinder a deep stereo model not used to deal with it. Thus, we combine the original image content with the virtual pattern through alpha-blending.</p>
-							$$I_L(x,y) \leftarrow (1-\alpha) I_L(x,y) + \alpha \mathcal{A}(x,x',y)$$
-							$$I_R(x',y) \leftarrow (1-\alpha) I_R(x',y) + \alpha \mathcal{A}(x,x',y)$$
-						</li>
-						<li>
-							<p style="text-align: justify;">
-								Occlusions are an intrinsic product of the stereo system as each view see the scene in a different perspective.
-								In particular, known depth seeds that are visible in reference view, but occluded in target view could lead to ambiguities.
-							</p>
-							<center>
-								<img class="round" width="750px" src="./assets/occlusion_example.jpg" />
-							</center>
-							<p style="text-align: justify;">
-								In this example, known point P is virtually projected accordingly to a pattering strategy.
-								However, as P is occluded in target view, the virtual projection covers original foreground content Q. Consequentially, foreground point has no longer a clear match.
-								If we can classify correctly P as occluded, we can exploit the potential of our proposal.
-								Instead of projecting a pattern that would cover foreground content, we can virtually project target content of Q into reference pixel of P.
-								This solution ease the correspondence for P and do not interfere with foreground pixel.
-								We propose a simple heuristic to classify occluded sparse disparity points.
-							</p>
-							<center>
-								<img class="round" width="500px" src="./assets/occlusion_example2.jpg" />
-							</center>
-							<p style="text-align: justify;">
-								Considering the target view, it assumes at least one foreground sparse point in the neighborhood of the occluded sparse point.
-								In this example P and Q are known overlapping points in target view, while in reference view they are distinct points.
-								We aim to classify P as occluded.
-							</p>
-							<center>
-								<img class="round" width="900px" src="./assets/occlusion_example3.jpg" />
-							</center>
-							<p style="text-align: justify;">
-								Firstly, given a sparse disparity map obtained using depth sensor, we warp each point at coordinate $(x, y)$ into an image-like grid $W$ at coordinate $(x',y)$.
-								In this representation sparse points are seen from target view perspective: foreground and occluded points are now closer to each other.
-								Each valid sparse point $W(x_o,y_o)$ is classified as occluded if the following inequality holds for at least one neighbor $W(x,y)$ within a 2D window of size $r_x \times r_y$.
-							</p>
-							$$ W(x,y)-W(x_o,y_o) - \lambda (\gamma\lvert x-x_o \rvert + (1-\gamma) \lvert y-y_o \rvert ) > t$$
-							<p style="text-align: justify;">
-								This inequality simply threshold difference between disparity of two points and weight it accordingly to coordinate distance.
-								$\lambda$, $t$ and $\gamma$ are parameters that have to be tuned.
-								Finally, points classified as occluded are warped back to obtain an occlusion mask.
-							</p>
-						</li>
-					</ul>
-
-                    <center>
-                        <img src="assets/extension/qualitativo_vpp.jpg" width="1000px"/>
-                    </center>
-                    <table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-                        <tr>
-                            <td>
-                                <p style="text-align: justify;">
-                                    <strong>VPP in action.</strong> 
-                                    Hallucinated stereo pair using pattern (vi); zoomed-in view with FGD-Projection (a), corresponding area (b) with sub-pixel splatting and left border occlusion projection (c). Adaptive patches guarantee the preservation of depth discontinuities and thin details (d).
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-
-				</td>
-			</tr>
-		</center>
-	</table>
-
-	<br>
-	<br>
-	<hr>
-
-	<center>
-		<h1>Experimental Results</h1>
-	</center>
-
-	<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-		<center>
-			<tr>
-				<td>
-					<h2>Performance versus Competitors</h2>
-					<center>
-						<img src="assets/extension/curva_densita_psmnet_final.png" width="1000px"/>
-						<img src="assets/extension/curva_densita_raft_final.png" width="1000px"/>
-					</center>
-					<p style="text-align: justify;">
-						Plots show the error rate on Middlebury 2014 training split, varying density of sparse hint points from 0% to 5%.
-						We compare two stereo networks together with our VPP framework against:
-					</p>
-					<ul>
-						<li>The very same two networks in conjunction with Guided Stereo Matching framework</li>
-						<li>LidarStereoNet</li>
-						<li>CCVNorm</li>
-					</ul>
-
-					<p style="text-align: justify;">
-						As shown in the figures, VPP generally reaches almost optimal performance with only 1% depth density.
-						Except few cases in the training configurations with some higher density, VPP achieves much lower error rates.
-					</p>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<br>
-					<h2>VPP with off-the-shelf networks</h2>
-					<center>
-						<img src="assets/plots.png" width="1000px"/>
-					</center>
-					<p style="text-align: justify;">
-						These last plots show the effectiveness of our technique using off-the-shelf networks  (i.e., <a href="https://github.com/gengshan-y/high-res-stereo">HSMNet</a>, <a href="https://github.com/gallenszl/CFNet">CFNet</a>, <a href="https://github.com/megvii-research/CREStereo">CREStereo</a>, <a href="https://github.com/princeton-vl/RAFT-Stereo">RAFT-Stereo</a>) on four different datasets:
-					</p>
-					<ul>
-						<li><a href="https://vision.middlebury.edu/stereo/data/scenes2014/">Middlebury 2014</a> training split (error rate > 2)</li>
-						<li><a href="https://vision.middlebury.edu/stereo/data/scenes2021/">Middlebury 2021</a> (error rate > 2)</li>
-						<li><a href="https://www.eth3d.net/">ETH3D</a> (error rate > 1)</li>
-						<li><a href="https://www.cvlibs.net/datasets/kitti/">KITTI</a> 142 Split (error rate > 3)</li>
-					</ul>
-					<p style="text-align: justify;">
-						Even without any additional training, our framework boosts accuracy of any model with rare exceptions.
-					</p>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<br>
-					<h2>Additional Evaluation with Raw Depth Data</h2>
-                    <center>
-                        <img src="assets/extension/dsec_night.png" width="1000px"/>
-                    </center>
-                    <table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-                        <tr>
-                            <td>
-                                <p style="text-align: justify;">
-                                    <strong>Qualitative result on DSEC night split.</strong> 
-                                    Passive stereo networks (e.g., <a href="https://github.com/XuelianCheng/LEAStereo">LEAStereo</a> and <a href="https://github.com/gallenszl/PCWNet">PCWNet</a>) often fail when dealing with low ambient light, while VPP allows perceiving even challenging objects, such as the far background walls.
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                    <center>
-                        <img src="assets/extension/m3ed_day.png" width="1000px"/>
-                    </center>
-                    <table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-                        <tr>
-                            <td>
-                                <p style="text-align: justify;">
-                                    <strong>Qualitative result on M3ED day split.</strong> 
-                                    Both <a href="https://github.com/jimmy19991222/ELFNet">ELFNet</a> and <a href="https://github.com/ibaiGorordo/HITNET-Stereo-Depth-estimation">HITNet</a> struggle with large texture-less areas, for example, created by scenes with high dynamic range. Our framework can leverage sparse depth points to solve this issue, whereas projected patterns would be ineffective.
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                    <center>
-                        <img src="assets/extension/dsec_night.png" width="1000px"/>
-                    </center>
-                    <table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-                        <tr>
-                            <td>
-                                <p style="text-align: justify;">
-                                    <strong>Qualitative result on SIMSTEREO.</strong> 
-                                    Some networks, such as <a href="https://github.com/David-Zhao-1997/High-frequency-Stereo-Matching-Network">DLNR</a>, often produce artefacts when fed with stereo pairs acquired with pattern projection active. In contrast, the same networks can seamlessly take advantage of our virtual patterns.
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                    <center>
-                        <img src="assets/extension/m3ed_active.png" width="1000px"/>
-                    </center>
-                    <table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
-                        <tr>
-                            <td>
-                                <p style="text-align: justify;">
-                                    <strong>Qualitative result on M3ED-Active.</strong> 
-                                    Virtual and physical projected patterns help to improve the accuracy of a recent stereo network (i.e., <a href="https://github.com/princeton-vl/RAFT-Stereo">RAFT-Stereo</a>) when dealing with large uniform areas.
-                                </p>
-                            </td>
-                        </tr>
-                    </table>                                        
-                    <p style="text-align: justify;">
-						These last plots show the effectiveness of our technique using additional off-the-shelf networks (e.g., <a href="https://github.com/David-Zhao-1997/High-frequency-Stereo-Matching-Network">DLNR</a>, <a href="https://github.com/jimmy19991222/ELFNet">ELFNet</a>) on four additional passive/active raw datasets:
-					</p>
-					<ul>
-						<li><a href="https://m3ed.io/">M3ED</a> (error rate > 3)</li>
-						<li><a href="https://m3ed.io/">M3ED-Active</a> (error rate > 3)</li>
-						<li><a href="https://dsec.ifi.uzh.ch/">DSEC</a> (error rate > 3)</li>
-						<li><a href="https://ieee-dataport.org/open-access/active-passive-simstereo">SIMSTEREO</a> (error rate > 1)</li>
-					</ul>
-					<p style="text-align: justify;">
-						Even without any additional training, our framework boosts accuracy of any model with rare exceptions.
-					</p>
-				</td>
-			</tr>            
-		</center>
-	</table>
-
 
 	<br>
 	<hr>
@@ -1150,7 +737,21 @@
             eprint={2406.04345},
             archivePrefix={arXiv},
             primaryClass={cs.CV}
-      }</code></pre>
+        }</code></pre>
+	    <pre style="background-color: #f5f5f5; color: #4a4a4a; font-size: 1.5em; overflow-x: auto;"><code >@inproceedings{bartolomei2024revisiting,
+			title={Revisiting depth completion from a stereo matching perspective for cross-domain generalization},
+			author={Bartolomei, Luca and Poggi, Matteo and Conti, Andrea and Tosi, Fabio and Mattoccia, Stefano},
+			booktitle={2024 International Conference on 3D Vision (3DV)},
+			pages={1360--1370},
+			year={2024},
+			organization={IEEE}
+	    }</code></pre>	  
+		<pre style="background-color: #f5f5f5; color: #4a4a4a; font-size: 1.5em; overflow-x: auto;"><code>@inproceedings{bartolomei2024lidar,
+			title={LiDAR-Event Stereo Fusion with Hallucinations},
+			author={Bartolomei, Luca and Poggi, Matteo and Conti, Andrea and Mattoccia, Stefano},
+			booktitle={European Conference on Computer Vision (ECCV)},
+			year={2024},
+		}</code></pre>		
 	</div>
 
 
@@ -1163,7 +764,7 @@
 	</center>
 
 	<p style="text-align: justify;">
-		This study was carried out within the MOST – Sustainable Mobility National Research Center and received funding from the European Union Next-GenerationEU – PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNRR) – MISSIONE 4 COMPONENTE 2, INVESTIMENTO 1.4 – D.D. 1033 17/06/2022, CN00000023. This manuscript reflects only the authors’ views and opinions, neither the European Union nor the European Commission can be considered responsible for them.
+		This study was carried out within the MOST - Sustainable Mobility National Research Center and received funding from the European Union Next-GenerationEU - PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNRR) - MISSIONE 4 COMPONENTE 2, INVESTIMENTO 1.4 - D.D. 1033 17/06/2022, CN00000023. This manuscript reflects only the authors' views and opinions, neither the European Union nor the European Commission can be considered responsible for them.
 	</p>
 
 
