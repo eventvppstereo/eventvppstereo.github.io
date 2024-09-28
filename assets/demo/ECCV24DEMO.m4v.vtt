@@ -1,0 +1,653 @@
+WEBVTT
+
+1
+00:00:00.050 --> 00:00:04.400
+Hi, I'm Luca Bartolomei and I'm going to
+present you our demo multi-setup depth
+
+2
+00:00:04.400 --> 00:00:05.750
+perception through virtual image
+Hallucination.
+
+3
+00:00:06.770 --> 00:00:09.920
+Our code and papers are available on our
+project page.
+
+4
+00:00:09.950 --> 00:00:13.910
+Given a pair of stereo images stereo
+algorithms try to resolve these so-called
+
+5
+00:00:13.910 --> 00:00:15.350
+correspondence problem.
+
+6
+00:00:15.350 --> 00:00:17.240
+This problem is not always easy.
+
+7
+00:00:17.270 --> 00:00:21.140
+Uniform areas such as the wall and the
+figure make the problem ambiguous.
+
+8
+00:00:21.170 --> 00:00:25.190
+Furthermore, deep stereo networks suffer
+when dealing with unseen scenarios.
+
+9
+00:00:25.220 --> 00:00:30.350
+Meanwhile, given an image and sparse depth
+points, specialized deep networks try to
+
+10
+00:00:30.380 --> 00:00:33.980
+complete the sparse depth map accordingly to
+the RGB image.
+
+11
+00:00:34.010 --> 00:00:38.480
+Recent SOTA depth completion networks
+achieve impressive in-domain performance.
+
+12
+00:00:38.480 --> 00:00:43.730
+However, they lack generalization across
+different domains inspired by active stereo.
+
+13
+00:00:43.760 --> 00:00:49.250
+Our techniques virtually project a pattern
+into stereo images or event streams according
+
+14
+00:00:49.280 --> 00:00:50.750
+to sparse depth measurements.
+
+15
+00:00:50.750 --> 00:00:55.670
+We assume a calibrated setup composed of a
+stereo frame or event camera and a depth
+
+16
+00:00:55.670 --> 00:00:59.810
+sensor appropriate for the final
+environment, as shown in the left figure.
+
+17
+00:00:59.840 --> 00:01:04.430
+Our proposal increases dramatically the
+accuracy of the stereo network, even with a
+
+18
+00:01:04.430 --> 00:01:06.110
+small percentage of deep seeds.
+
+19
+00:01:06.140 --> 00:01:10.730
+We notice that recent deep stereo networks
+achieved strong generalization capabilities.
+
+20
+00:01:10.760 --> 00:01:15.890
+Purposely, we cast the stereo network as a
+depth completion network using a hand-crafted
+
+21
+00:01:15.890 --> 00:01:20.840
+framework that generates a virtual stereo
+pair out of sparse depth points, as displayed
+
+22
+00:01:20.840 --> 00:01:21.920
+in the right figure.
+
+23
+00:01:21.950 --> 00:01:25.370
+Our proposal can deal with in domain and out
+domain scenarios.
+
+24
+00:01:25.370 --> 00:01:27.830
+As for previous Deep Stereo Fusion methods.
+
+25
+00:01:27.860 --> 00:01:33.560
+Our proposal relies on sparse depth seeds,
+but differentially from them we inject sparse
+
+26
+00:01:33.560 --> 00:01:37.940
+points directly into images using a virtual
+pattern for each known point.
+
+27
+00:01:37.970 --> 00:01:40.160
+We convert depth into disparity.
+
+28
+00:01:40.160 --> 00:01:44.420
+Then we apply a virtual pattern in each
+stereo image accordingly to a pattering
+
+29
+00:01:44.420 --> 00:01:48.530
+strategy. Our method does not require any
+change or assumption.
+
+30
+00:01:48.530 --> 00:01:52.700
+In the stereo matcher, we assume it to be a
+black box model that requires a pair of
+
+31
+00:01:52.700 --> 00:01:56.090
+rectified stereo images and produces a
+disparity map.
+
+32
+00:01:56.090 --> 00:02:00.470
+Let's see in detail a pair of images
+enhanced with our virtual pattern projection.
+
+33
+00:02:00.470 --> 00:02:05.690
+This illustration shows a Middlebury stereo
+frame enhanced with our adaptive random patch
+
+34
+00:02:05.690 --> 00:02:07.220
+based virtual pattern.
+
+35
+00:02:07.670 --> 00:02:09.590
+On the upper part of the left image.
+
+36
+00:02:09.590 --> 00:02:14.390
+We can appreciate our occlusion handling
+strategy, and on the top of the right image,
+
+37
+00:02:14.390 --> 00:02:16.670
+the corresponding area with subpixel
+splatting.
+
+38
+00:02:18.470 --> 00:02:23.000
+Furthermore, as visible in the left bottom
+part of the left image, our virtual pattern
+
+39
+00:02:23.000 --> 00:02:27.410
+is also projected on the left border
+occlusion to maintain consistency.
+
+40
+00:02:28.430 --> 00:02:33.170
+Lastly, our adaptive patches guarantee the
+preservation of depth discontinuities in thin
+
+41
+00:02:33.170 --> 00:02:38.960
+details. We assess the performance of our
+framework using unfiltered depth hints
+
+42
+00:02:38.990 --> 00:02:45.680
+sourced from off the shelf lidar sensors
+using data sets such as KittiDC and M3ED.
+
+43
+00:02:46.130 --> 00:02:50.750
+As shown in the figure, our framework can
+leverage sparse depth points to solve the
+
+44
+00:02:50.750 --> 00:02:54.740
+Textureless region issue, whereas
+traditional projected patterns would be
+
+45
+00:02:54.740 --> 00:03:00.100
+ineffective. We embark on a comparison
+between the effectiveness of VPP against the
+
+46
+00:03:00.100 --> 00:03:05.710
+traditional active stereo setup, typically
+composed of an IR stereo camera and an IR
+
+47
+00:03:05.740 --> 00:03:08.830
+projector using the same stereo data set.
+
+48
+00:03:08.860 --> 00:03:14.350
+Some deep networks, such as DLNR, could often
+produce artifacts when fed with stereo pairs
+
+49
+00:03:14.350 --> 00:03:16.600
+acquired with IR pattern projection.
+
+50
+00:03:16.600 --> 00:03:21.100
+In contrast, the same networks can
+seamlessly take advantage of our virtual
+
+51
+00:03:21.100 --> 00:03:25.870
+patterns, starting from the VPP setup
+composed of a stereo camera and a sparse
+
+52
+00:03:25.870 --> 00:03:30.400
+depth sensor. We wondered how VPP would
+perform in case of camera failure.
+
+53
+00:03:30.400 --> 00:03:35.380
+When a camera fails depth stereo Fusion
+collapses into a depth completion task.
+
+54
+00:03:35.410 --> 00:03:40.180
+Since we cannot virtually project into the
+real stereo pair, we create a virtual stereo
+
+55
+00:03:40.180 --> 00:03:43.120
+system with an arbitrarily chosen baseline.
+
+56
+00:03:43.150 --> 00:03:47.650
+The stereo matcher can densify the sparse
+virtual stereo images, producing a dense
+
+57
+00:03:47.650 --> 00:03:52.090
+depth map. The virtual baseline is an
+important hyperparameter to tune.
+
+58
+00:03:52.120 --> 00:03:55.800
+A larger baseline is preferred when dealing
+with outdoor environments.
+
+59
+00:03:55.800 --> 00:04:00.510
+We implemented our depth completion
+framework with RSM, a traditional stereo
+
+60
+00:04:00.510 --> 00:04:06.000
+algorithm, and RAF stereo, a recent
+iterative deep stereo network starting from a
+
+61
+00:04:06.000 --> 00:04:07.380
+sparse cost volume.
+
+62
+00:04:07.410 --> 00:04:11.430
+Rsm can densify the volume using the volume
+aggregation module.
+
+63
+00:04:11.460 --> 00:04:16.830
+Furthermore, the RAF stereo Recurrent module
+can reconstruct a dense disparity map even if
+
+64
+00:04:16.830 --> 00:04:18.900
+guided by a sparse correlation volume.
+
+65
+00:04:18.930 --> 00:04:24.750
+Rsm can use context image to modulate Sgm's
+penalty scores, and RAF stereo explicitly
+
+66
+00:04:24.750 --> 00:04:29.760
+handles context image via the context
+encoder, but unfortunately not all stereo
+
+67
+00:04:29.760 --> 00:04:32.970
+matching can handle the context image,
+resulting in a performance drop.
+
+68
+00:04:32.970 --> 00:04:38.040
+We assess the performance of our depth
+completion framework using NYU depth 52 and
+
+69
+00:04:38.040 --> 00:04:44.010
+Void as indoor data sets, and add C and D
+dad as outdoor data sets as shown in the
+
+70
+00:04:44.010 --> 00:04:48.870
+figure. Our depth completion framework
+equipped with RAF stereo can handle different
+
+71
+00:04:48.870 --> 00:04:51.780
+domains while recent SOTA networks fail.
+
+72
+00:04:51.810 --> 00:04:57.830
+Our last paper presented at Iccv 2024 is a
+pioneering work regarding depth and event
+
+73
+00:04:57.830 --> 00:04:58.970
+stereo fusion.
+
+74
+00:04:58.970 --> 00:05:01.310
+Inspired by our previous work VPP.
+
+75
+00:05:01.340 --> 00:05:08.000
+We propose two strategies dubbed as Vsh and
+BTH that achieve SOTA performance if compared
+
+76
+00:05:08.000 --> 00:05:09.710
+to traditional depth stereo fusion
+techniques.
+
+77
+00:05:10.460 --> 00:05:15.110
+The first one, Virtual Stack Hallucination,
+is a direct extension of VPP.
+
+78
+00:05:15.350 --> 00:05:19.250
+The event stack that encodes the event
+stream is seen as an image with an arbitrary
+
+79
+00:05:19.280 --> 00:05:20.960
+number of channels and value range.
+
+80
+00:05:20.960 --> 00:05:25.370
+We enhance the event stacks using an
+upgraded random patterning operator that can
+
+81
+00:05:25.370 --> 00:05:27.920
+work with an unknown number of channels and
+value range.
+
+82
+00:05:27.950 --> 00:05:32.810
+The second extension, Back in Time
+hallucination, is a more general proposal
+
+83
+00:05:32.810 --> 00:05:36.470
+that injects sparse depth hints directly
+into the event stream.
+
+84
+00:05:36.470 --> 00:05:41.210
+By doing so, we completely ignore the
+architecture of the event stereo network.
+
+85
+00:05:41.240 --> 00:05:46.520
+Bth creates fictitious events that obey the
+following constraints the time ordering
+
+86
+00:05:46.520 --> 00:05:51.710
+constraint, the geometry constraint, and a
+similarity constraint coded into polarity and
+
+87
+00:05:51.710 --> 00:06:00.220
+timestamp. This qualitative video shows the
+benefits of both with respect to a passive
+
+88
+00:06:00.220 --> 00:06:01.660
+event. Stereo setup.
+
+89
+00:06:01.750 --> 00:06:04.870
+Firstly, we show a situation where the car
+is stopped.
+
+90
+00:06:04.900 --> 00:06:06.940
+There are no valid events in stereo.
+
+91
+00:06:06.940 --> 00:06:08.860
+Matching is not feasible in the vanilla
+setup.
+
+92
+00:06:09.490 --> 00:06:15.220
+Instead, BTH provides meaningful events even
+if the scene is static during motion.
+
+93
+00:06:15.250 --> 00:06:17.020
+A large number of events are fired in the
+stereo.
+
+94
+00:06:17.410 --> 00:06:18.910
+Matching is working correctly.
+
+95
+00:06:18.940 --> 00:06:21.880
+Our additional fake events do not interfere
+with them.
+
+96
+00:06:21.880 --> 00:06:24.790
+Instead, they still help in uniform regions.
+
+97
+00:06:26.890 --> 00:06:31.840
+In this second scene, we show a scenario
+where the car is stopped, but the environment
+
+98
+00:06:31.840 --> 00:06:33.250
+is partially dynamic.
+
+99
+00:06:33.280 --> 00:06:35.170
+We observe the same phenomena.
+
+100
+00:06:35.200 --> 00:06:40.000
+Fake events help in static regions and
+uniform regions, preserving the dynamic
+
+101
+00:06:40.000 --> 00:06:49.270
+content. Finally, we show the performance of
+our
+
+102
+00:06:49.420 --> 00:06:51.540
+proposal in an indoor environment.
+
+103
+00:07:02.010 --> 00:07:06.720
+As you can see, both permits recovery of the
+accuracy on the left large wall.
+
+104
+00:07:22.680 --> 00:07:28.920
+We built a functional prototype composed of
+an Oak-d Lite stereo camera with a built in
+
+105
+00:07:28.920 --> 00:07:35.790
+stereo matching algorithm and an Intel
+RealSense L515 LiDAR as the sparse depth
+
+106
+00:07:35.790 --> 00:07:40.440
+sensor. We managed to calibrate the setup
+using a standard chessboard calibration
+
+107
+00:07:40.440 --> 00:07:47.010
+algorithm between the IR camera of L515
+and the left camera of Oak-d light.
+
+108
+00:07:47.040 --> 00:07:52.450
+We also built a CNC machined aluminum
+support to guarantee a stable calibration
+
+109
+00:07:52.450 --> 00:07:53.530
+over time.
+
+110
+00:07:53.950 --> 00:07:59.920
+L 515 and Oak-d share the same clock as the
+host machine, and are time synchronized using
+
+111
+00:07:59.920 --> 00:08:01.810
+the nearest time stamp algorithm.
+
+112
+00:08:01.810 --> 00:08:05.890
+We built a second prototype suitable for
+outdoor environments, composed of an oak
+
+113
+00:08:05.890 --> 00:08:08.980
+daylight stereo camera and a livox mid 70
+lidar.
+
+114
+00:08:09.670 --> 00:08:14.290
+As the sparse depth sensor, we managed to
+calibrate the setup using a standard
+
+115
+00:08:14.290 --> 00:08:19.660
+chessboard calibration algorithm between a
+pseudo image extracted from the reflectivity
+
+116
+00:08:19.660 --> 00:08:23.650
+point cloud of mid 70 and the left camera of
+Oak-d Lite.
+
+117
+00:08:23.680 --> 00:08:28.510
+We also 3D printed a support to guarantee a
+stable calibration over time.
+
+118
+00:08:28.510 --> 00:08:33.520
+Mid 70 and Oak-d share the same clock and
+are time synchronized using the nearest
+
+119
+00:08:33.550 --> 00:08:34.840
+timestamp algorithm.
+
+120
+00:08:34.840 --> 00:08:39.610
+Firstly, the depth sensor captures sparse
+depth points with high confidence.
+
+121
+00:08:39.610 --> 00:08:43.960
+The resulting sparse depth map is
+reprojected to the Oak-d left camera, using
+
+122
+00:08:43.960 --> 00:08:48.430
+the rigid transformation previously found
+using the chessboard calibration algorithm.
+
+123
+00:08:48.430 --> 00:08:52.760
+Finally, the reprojected depth in the
+vanilla pair of stereo images are fed into
+
+124
+00:08:52.760 --> 00:08:57.680
+our VPP module, which produces two enhanced
+stereo images in a fraction of a second.
+
+125
+00:08:57.710 --> 00:09:02.660
+These VPP images are fed again into the
+Oak-d stereo algorithm to obtain a robust
+
+126
+00:09:02.660 --> 00:09:04.070
+disparity estimation.
+
+127
+00:09:04.100 --> 00:09:08.120
+Our graphical interface permits us to show
+the benefits of our proposal in critical
+
+128
+00:09:08.120 --> 00:09:13.370
+areas, such as textureless regions, with
+respect to the vanilla passive stereo in our
+
+129
+00:09:13.520 --> 00:09:14.810
+VPPDC demo.
+
+130
+00:09:14.840 --> 00:09:19.220
+The L515 captures both depth points and an
+RGB image.
+
+131
+00:09:19.250 --> 00:09:25.580
+Next, VPPDC generates two virtual stereo
+images, which are processed by the Ocds SVM
+
+132
+00:09:25.580 --> 00:09:31.370
+processor. To leverage the RGB image, we use
+RAF stereo, feeding it with the virtual
+
+133
+00:09:31.370 --> 00:09:33.740
+stereo pair along with the context image.
+
+134
+00:09:33.770 --> 00:09:38.270
+This integration allows for enhanced detail
+extraction from the context image.
+
+135
+00:09:38.300 --> 00:09:44.780
+A similar VPPDC demo is done using the D70
+as the sparse depth sensor and OAK RGB
+
+136
+00:09:44.810 --> 00:09:45.920
+as image Guidance.
+
+137
+00:09:45.920 --> 00:09:47.480
+Thanks for the attention.
